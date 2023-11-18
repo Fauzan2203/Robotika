@@ -1,0 +1,61 @@
+#Membuat body robot
+1. Click + buat baru, pilih base node, klik robot trs add
+2. di bagian robot klik children
+4. click +, pilih base node, klik transform trs add
+5. pilih children dibawah transform, klik +, pilih base node, klik shape trs add
+6. pilih geometry dibawah shape, double klik buat pilih shape, pilih cylinder
+7. dibawah geometry ketik height = 0.08, radius = 0.045
+8. dibawah shape pilih appearance, klik base nodes dan klik PBRappearance, klik add
+9. dibawah appearance, base color jadi r = 0, g = 0, b = 1, roughness = 1, metalsness = 0
+10. bisa diliat body dari si robot nya ini ada dibawah lantai
+11. dibawah children pilih transform, bagian translation diubah jadi y = 0.0415
+12. masih di transform bagian DEF diberi nama "Body"
+13. dibawah children double klik boundingobject, klik use dan pilih body, klik add
+14. dibawah children double klik physics 
+15. di save
+
+#Menambahkan wheel untuk si robot
+1. dibawah children pilih DEF body transform, klik +, pilih base node dan pilih Hingejoint dan add
+2. dibawah children pilih HingeJoint dan double klik jointParameters, pilih Hingejointparameters
+3. dibawah children > hingejoint > joinparameters, double klik pada device dan pilih rotationalmotor, klik add
+4. pada bagian rotationalmotor, pada bagian name beri nama motor_1
+5. dibawah children > hingejoint > device double klik endpoint, ke base node dan pilih solid, klik add
+6. di bagian children > hingejoint > endpoint pilih children, klik +, ke base node dan pilih shape. dan add
+7. dibagian children dibawah endpoint double klik geometry dan pilih cylinder trs add
+8. dibawah geometry beri height = 0.01, radius = 0.025
+9. dibagian children > hingejoint > endpoint ubah translation menjadi x = 0, y = 0.1, z = 0, buat ngasih tunjuk wheel nya
+10. dibagian children > hingejoint > endpoint ubah rotation menjadi x = 0, y = 0, z = 1, angle = 1.57
+11. dibagian children > hingejoint > endpoint ubah translation menjadi x = 0.045, y = 0.025, z = 0
+12. dibagian children > hingejoint > jointparameters > anchor diubah x = 0.045, y = 0.025
+13. dibagian children > hingejoint > endpoint > children > shape double klik appearance ke base node dan pilih PBR appearance, klik add
+14. dibagian shape > appearancenya ubah basecolor menjadi r = 1, g = 0, blue = 0, roughness = 1, metalness = 0
+15. pilih shape masukan nama Wheel di DEF
+16. dibawah endpoint doubleklik boundingobject, ke use dan pilih wheel, klik add
+17. terakhir ke physics di double klik dan pilih physics, klik add
+18. pada physics berinama "wheel_physics" di DEF
+19. di save
+
+#Menambahkan wheel satu lagi
+1. pilih hingejoint, klik +, ke base node dan pilih hingejoint, klik add
+2. pada jointparameters di doubleklik dan pilih jointparameters
+3. pada bagian device di doubleklik dan pilih rotationalmotors
+4. pada rotationalmotor berinama motor_2
+5. pilih endpoint, klik +, ke base node pilih solid, klik add
+6. dibawah endpoint doubleklik children dan pilih wheel, klik add
+7. dibawah endpoint ubah translation x = -0.045, y = 0.025, rotation x = 0, y = 0, z = 1, angle = 1.57
+8. dibawah hingejoint pilih joinparameters dan ubah anchor x = -0.045, y = 0.025
+9. terakhir pada hingjeoint > endpoint double klik bounding object, ke use pilih wheel
+10. terus double klik physics, ke use pilih wheel_physics, klik add
+
+#Menambahkan design mata 
+1. pilih hingejoint kedua, klik +, ke base node pilih solid, klik add
+2. di solid pilih children, klik +, ke base node pilih shape, klik add
+3. dibawah shape doubleklik geometry, ke base node pilih box, klik add
+4. ubah size geometry menjadi x = 0.005, y = 0.005, z = 0.005
+5. dibawah shape doubleklik appearance, ke base node pilih PBRappearance, klik add
+6. dibawah appearance ubah basecolor jadi 1 0 0, roughness = 1, metalness = 0
+7. ke solid dibawah hingejoint ubah translation x = 0.015, y = 0.07, z = 0.045
+8. bagian shape dibawah children bagian solid beri nama "eye" pada DEF
+9. pilih solid, klik +, pilih solid trs klik add, dibuat untuk mata satu lagi
+10. di solid kedua pilih children, klik +, ke use dan pilih eye
+11. pilih solid dan ubah translation x = -0.015, y = 0.07, z = 0.045
